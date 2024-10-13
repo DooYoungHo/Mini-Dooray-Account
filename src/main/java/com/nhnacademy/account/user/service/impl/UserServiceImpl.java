@@ -109,11 +109,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUserById(String id, UserUpdateDto userUpdateDto) {
-        User user = userRepository.findById(id)
+    public User updateUserById(UserUpdateDto userUpdateDto) {
+        User user = userRepository.findById(userUpdateDto.getId())
                 .orElseThrow(() -> new AccountNotFoundException("찾으시는 유저가 존재하지 않슴둥"));
-
-        user.setPwd(userUpdateDto.getPwd());
         user.setEmail(userUpdateDto.getEmail());
 
         return userRepository.save(user);

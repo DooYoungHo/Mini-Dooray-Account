@@ -34,5 +34,5 @@ public interface UserService {
 
     LoginDto getUserByStatus(String userId, Status status);
 
-    User updateUserById(String id, UserUpdateDto userUpdateDto);
+    User updateUserById(UserUpdateDto userUpdateDto);
 }

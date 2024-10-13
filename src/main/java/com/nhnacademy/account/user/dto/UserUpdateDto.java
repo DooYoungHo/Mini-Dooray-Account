@@ -9,7 +9,7 @@ import lombok.Getter;
 @Data
 @AllArgsConstructor
 public class UserUpdateDto {
-    private String pwd;
-    private String email;
 
+    private String id;
+    private String email;
 }

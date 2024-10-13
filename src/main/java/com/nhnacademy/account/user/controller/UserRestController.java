@@ -72,10 +72,9 @@ public class UserRestController {
 
 
     // 유저 수정
-    @PostMapping("/user/update/{userId}")
-    public ResponseEntity<User> updateUser(
-            @Valid @PathVariable("userId") String userId, @RequestBody UserUpdateDto userUpdateDto) {
-        User updatedUser = userService.updateUserById(userId, userUpdateDto);
+    @PutMapping("/user/update")
+    public ResponseEntity<User> updateUser(@RequestBody UserUpdateDto userUpdateDto) {
+        User updatedUser = userService.updateUserById(userUpdateDto);
         return ResponseEntity.ok(updatedUser);
     }
 }
